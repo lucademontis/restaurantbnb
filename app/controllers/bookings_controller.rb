@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-
+skip_after_action :verify_authorized
 
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
@@ -8,9 +8,11 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.restaurant = Restaurant.find(params[:restaurant_id])
+    restaurant = Restaurant.find(params[:restaurant_id])
+    @booking.restaurant = restaurant
+    @booking.user = current_user
      if @booking.save
-    redirect_to booking_path(@booking.restaurant)
+    redirect_to restaurant_path(restaurant)
       else
     render :new
       end
