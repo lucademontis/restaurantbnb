@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
  has_many :bookings
  has_many :restaurants
+
+ def reservations
+  restaurants.map { |restaurant| restaurant.bookings }.flatten
+ end
+
 end

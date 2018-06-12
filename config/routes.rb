@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   end
   get '/my-bookings', to: "dashboard#my_bookings"
   get '/my-restaurants', to: "dashboard#my_restaurants"
+  get '/booking-requests', to: "dashboard#booking_requests"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_11_150122) do
+ActiveRecord::Schema.define(version: 2018_06_12_163055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_06_11_150122) do
     t.bigint "user_id"
     t.bigint "restaurant_id"
     t.integer "total_price"
-    t.string "status"
+    t.string "status", default: "pending"
     t.integer "number_of_people"
     t.date "start_date"
     t.date "end_date"
