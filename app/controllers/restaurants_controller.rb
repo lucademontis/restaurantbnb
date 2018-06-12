@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
 
   before_action :find_rest, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def new
     @restaurant = Restaurant.new
     # calls for the same method within restaurant_policy
