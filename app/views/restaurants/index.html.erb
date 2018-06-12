@@ -1,5 +1,6 @@
 
 <div class="container">
+
   <div class="row">
     <div class="row">
         <% @restaurants.each do |restaurant| %>
@@ -15,6 +16,11 @@
         <% end %>
     </div>
   </div>
+
 </div>
 
+<div class="banner">
 
+<%= link_to "Create a new restaurant",  new_restaurant_path, class: "btn btn-primary btn-lg" %>
+
+</div>

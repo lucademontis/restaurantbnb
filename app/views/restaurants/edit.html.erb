@@ -1,4 +1,23 @@
-<h1>Restaurants#edit</h1>
-<p>Find me in app/views/restaurants/edit.html.erb</p>
 
-<%= render "form", restaurant: @restaurant %>
+
+<div class="container">
+  <div class="col-xs-12">
+
+    <h1><%= @restaurant.name %></h1>
+   <%= link_to "delete this restaurant", restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-warning'%>
+  <div class="form-group">
+    <%= render "form", restaurant: @restaurant %>
+  </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+   <%= link_to "Back to the restaurant", restaurant_path, class: "btn btn-primary btn-lg" %>
+
+
+
