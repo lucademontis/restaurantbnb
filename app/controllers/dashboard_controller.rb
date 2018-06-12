@@ -1,6 +1,5 @@
 class DashboardController < ApplicationController
-skip_after_action :verify_authorized
-
+  skip_after_action :verify_authorized
 
   def my_bookings
     @bookings = policy_scope(Booking).where(user: current_user)
