@@ -10,4 +10,7 @@ class DashboardController < ApplicationController
     @restaurants = policy_scope(Restaurant).where(user: current_user)
   end
 
+  def booking_requests
+    @reservations = current_user.reservations
+  end
 end
