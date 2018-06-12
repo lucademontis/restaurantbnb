@@ -1,13 +1,9 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-
-
-      <%= simple_form_for [restaurant] do |f| %>
-      <%= f.input :name %>
-
-
-        <%= f.button :submit, class: 'btn btn-primary' %>
+  <%= simple_form_for [restaurant] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category %>
+    <%= f.input :address %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
