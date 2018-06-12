@@ -1,0 +1,43 @@
+.box-banner{
+  height:800px;
+}
+
+.banner {
+  background-position: center;
+  color: white;
+  text-align: center;
+  height: 60vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-animation: zoom 50s; /* Chrome, Safari, Opera */
+    animation: zoom 50s;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes zoom {
+    from {
+      -webkit-transform: scale(0.8,0.8);
+    }
+    to {
+      -webkit-transform: scale(1,1);
+    }
+}
+
+/* Standard syntax */
+@keyframes zoom {
+   from {
+        transform: scale(0.8,0.8);
+   }
+   to {
+        transform: scale(1,1);
+   }
+}
