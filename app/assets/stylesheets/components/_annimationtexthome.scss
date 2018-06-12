@@ -1,0 +1,72 @@
+
+
+/* html { font-size: 1px; }
+body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 30rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.6)), url(https://images.unsplash.com/photo-1493382051629-7eb03ec93ea2);
+  background-position: 50% 75%;
+  background-size: cover;
+} */
+
+main {
+  position: relative;
+  display: flex;
+}
+/*Easyfork*/
+h1 { margin: 0; }
+.marker, .a, .s, .y, .f, .o, .r {
+  animation-timing-function: cubic-bezier(0.15,-0.01, 0.58, 1);
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.marker {
+  position: absolute; top: 4rem; left: -3rem;
+  height: 1rem; width: 10rem;
+  background-color: black;
+  animation-name: marker;
+}
+
+.a { margin-left: 1rem;   animation-name: a; }
+.s { margin-left: 7rem; animation-name: s; }
+.y { margin-left: 16rem; animation-name: y; }
+.f { margin-left: 21rem; animation-name: f; }
+.o { margin-left: 25rem; animation-name: o; }
+.r { margin-left: 36rem; animation-name: r; }
+
+@keyframes a {
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(35rem); }
+}
+@keyframes s {
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(50rem); }
+}
+@keyframes y {
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(50rem); }
+}
+@keyframes f {
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(71rem); }
+}
+@keyframes o {
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(60rem); }
+}
+@keyframes r {
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(71rem); }
+}
+@keyframes marker {
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(90rem); }
+}
+
