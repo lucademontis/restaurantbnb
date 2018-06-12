@@ -1,16 +1,2 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-
-
-      <%= simple_form_for [@restaurant, @booking] do |f| %>
-      <%= f.input :number_of_people %>
-       <%= f.date_field :start_date %>
-       <%= f.date_field :end_date %>
-
-
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
-    </div>
-  </div>
-</div>
+ <h1>Book this restaurant</h1>
+ <%= render 'form', booking: @booking %>
