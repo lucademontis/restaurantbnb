@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   # Pundit: white-list approach.
+  # only asks for authorization unless devise controller, admin, index, my_rest, my_books
   after_action :verify_authorized, except: [:index, :my_restaurants, :my_bookings], unless: :skip_pundit?
   after_action :verify_policy_scoped, only: [:index, :my_restaurants, :my_bookings], unless: :skip_pundit?
 
@@ -16,6 +17,7 @@ class ApplicationController < ActionController::Base
   private
 
   def skip_pundit?
+    # checks if it's a devise controller or an admin
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
 end

@@ -1,2 +1,8 @@
 <h1> All my bookings: </h1>
 
+<% @bookings.each do |booking| %>
+<%= booking.start_date %>
+<%= booking.end_date %>
+<%= booking.number_of_people %>
+<%= booking.restaurant.name %>
+<% end %>

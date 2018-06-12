@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-skip_after_action :verify_authorized
 
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
@@ -24,7 +23,7 @@ private
 
 
   def booking_params
-    params.require(:booking).permit(:number_of_people, :restaurant_id, :user_id)
+    params.require(:booking).permit(:number_of_people, :start_date, :end_date, :restaurant_id, :user_id)
   end
 
 end
