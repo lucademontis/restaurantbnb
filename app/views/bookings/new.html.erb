@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+
+      <%= simple_form_for [@restaurant, @booking] do |f| %>
+      <%= f.input :number_of_people %>
+      <%= f.association :user %>
+
+
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
