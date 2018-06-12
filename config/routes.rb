@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :bookings, only: [:new, :create]
   end
-  # get '/my-bookings' to: "dashboard#mybookings"
-  # get '/my-restaurants' to: "dashboard#myrestaurants"
+  get '/my-bookings', to: "dashboard#my_bookings"
+  get '/my-restaurants', to: "dashboard#my_restaurants"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
