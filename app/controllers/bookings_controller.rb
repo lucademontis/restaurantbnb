@@ -8,12 +8,12 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    restaurant = Restaurant.find(params[:restaurant_id])
-    @booking.restaurant = restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @booking.restaurant = @restaurant
     authorize @booking
     @booking.user = current_user
     if @booking.save
-      redirect_to restaurant_path(restaurant)
+      redirect_to restaurant_path(@restaurant)
     else
       render :new
     end
