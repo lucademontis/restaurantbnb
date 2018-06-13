@@ -1,10 +1,17 @@
 <div class="container">
   <%= simple_form_for [restaurant] do |f| %>
+    <% if @restaurant.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @restaurant.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
     <%= f.input :name %>
     <%= f.input :category %>
     <%= f.input :address %>
     <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
-    </div>
-  </div>
+  <% end %>
 </div>

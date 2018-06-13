@@ -1,7 +1,9 @@
-<h1> Change status of the bookings</h1>
+<div class="container">
+  <h1> Change status of the bookings</h1>
 
-
-<% @reservations.each do |booking| %>
-
-<%= booking.status %>
-<% end %>
+  <% @reservations.each do |booking| %>
+    <div class="form-group">
+      <%= render 'form', booking: booking %>
+    </div>
+  <% end %>
+</div>

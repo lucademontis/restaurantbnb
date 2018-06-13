@@ -16,6 +16,17 @@ class BookingPolicy < ApplicationPolicy
     create?
   end
 
+  def update?
+   is_owner_or_admin?
+  end
+
+  def edit?
+    is_owner_or_admin?
+  end
+
+  # def destroy?
+  #   is_owner_or_admin?
+  # end
 
   private
 
