@@ -17,7 +17,7 @@
        <div class="form-group">
         <%= render 'form', booking: request %>
       </div>
-      <p class="price"> <%= request %></p>
+      <p class="price"> <%= request.total_price %> € </p>
     </div>
   </div>
   <% end %>
