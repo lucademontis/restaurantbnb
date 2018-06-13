@@ -17,56 +17,70 @@ body {
 main {
   position: relative;
   display: flex;
+
+  padding-bottom: 100px;
+
 }
 /*Easyfork*/
-h1 { margin: 0; }
-.marker, .a, .s, .y, .f, .o, .r {
+h1 { margin: 2; }
+.marker,.e, .a, .s, .y, .f, .o, .r, .k {
   animation-timing-function: cubic-bezier(0.15,-0.01, 0.58, 1);
   animation-duration: 5s;
   animation-iteration-count: infinite;
   will-change: transform;
+    font-family: 'Work Sans', sans-serif;
+  font-size: 30rem;
+
+  background-position: 50% 75%;
+
 }
 
 .marker {
-  position: absolute; top: 4rem; left: -3rem;
-  height: 1rem; width: 10rem;
+  position: absolute; top: 2rem; left: 0.2rem;
+  height: 0.4rem; width: 6rem;
   background-color: black;
   animation-name: marker;
 }
 
 .a { margin-left: 1rem;   animation-name: a; }
-.s { margin-left: 7rem; animation-name: s; }
-.y { margin-left: 16rem; animation-name: y; }
-.f { margin-left: 21rem; animation-name: f; }
-.o { margin-left: 25rem; animation-name: o; }
-.r { margin-left: 36rem; animation-name: r; }
+.s { margin-left: 1rem; animation-name: s; }
+.y { margin-left: 1rem; animation-name: y; }
+.f { margin-left: 1rem; animation-name: f; }
+.o { margin-left: 1rem; animation-name: o; }
+.r { margin-left: 1rem; animation-name: r; }
+.k { margin-left: 1rem; animation-name: k; }
 
 @keyframes a {
   0%, 20% { transform: translateX(0); }
-  50%, 70% { transform: translateX(35rem); }
+  50%, 70% { transform: translateX(2rem); }
 }
 @keyframes s {
   0%, 20% { transform: translateX(0); }
-  50%, 70% { transform: translateX(50rem); }
+  50%, 70% { transform: translateX(4rem); }
 }
 @keyframes y {
   0%, 20% { transform: translateX(0); }
-  50%, 70% { transform: translateX(50rem); }
+  50%, 70% { transform: translateX(7rem); }
 }
 @keyframes f {
   0%, 20% { transform: translateX(0); }
-  50%, 70% { transform: translateX(71rem); }
+  50%, 70% { transform: translateX(10rem); }
 }
 @keyframes o {
   0%, 20% { transform: translateX(0); }
-  50%, 70% { transform: translateX(60rem); }
+  50%, 70% { transform: translateX(13rem); }
 }
 @keyframes r {
   0%, 20% { transform: translateX(0); }
-  50%, 70% { transform: translateX(71rem); }
+  50%, 70% { transform: translateX(16rem); }
+}
+
+@keyframes k {
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(19rem); }
 }
 @keyframes marker {
   0%, 20% { transform: translateX(0); }
-  50%, 70% { transform: translateX(90rem); }
+  50%, 70% { transform: translateX(41rem); }
 }
 

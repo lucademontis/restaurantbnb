@@ -1,11 +1,13 @@
 
 <div class="container">
 
+
+
   <div class="row">
     <div class="row">
         <% @restaurants.each do |restaurant| %>
           <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'restaurant1.jpg' %>');">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= restaurant.photo.url %>');">
 
                 <div class="card-description">
                   <h2><%= restaurant.name %></h2>
@@ -24,3 +26,5 @@
 <%= link_to "Create a new restaurant",  new_restaurant_path, class: "btn btn-primary btn-lg" %>
 
 </div>
+
+

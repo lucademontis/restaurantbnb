@@ -32,3 +32,6 @@ group :development, :test do
 end
 
 gem "pundit"
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+
