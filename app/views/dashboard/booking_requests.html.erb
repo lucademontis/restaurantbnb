@@ -1,7 +1,36 @@
-<h1> Change status of the bookings</h1>
+
+<h2>My booking requests</h2>
 
 
-<% @reservations.each do |booking| %>
+<% @reservations.each do |request| %>
 
-<%= booking.status %>
+
+
+<div class="message">
+  <img class="avatar-small" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+  <div class="message-name">
+    <h3> <%=  request.user.name %></h3>
+    <p> <%= request.number_of_people %> people </p>
+
+  </div>
+  <div class="message-body">
+    <p><strong> <%=  request.restaurant.name %></strong></p>
+    <p>
+     From  <%= request.start_date %> to <%= request.end_date %>
+    </p>
+  </div>
+  <div class="message-status">
+    <p class="status pending"> <%= request.status %> </p>
+    <p class="price"> <%= request %></p>
+  </div>
+</div>
+
+
+
+
 <% end %>
+
+
+
+
+
