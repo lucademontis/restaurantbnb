@@ -4,8 +4,12 @@
 
   <div class="banner-inside">
     <h1><%= @restaurant.name %></h1>
+    <% if @restaurant.user_id == @current_user.id  %>
       <%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_restaurant_path %>
+    <% end %>
+    <% if @restaurant.user_id != @current_user.id %>
       <p> <%= link_to "Book this restaurant",  new_restaurant_booking_path(@restaurant), class: "btn btn-cute" %> </p>
+    <% end %>
       <%= @restaurant.price %>
       <%= @restaurant.category %>
       <%= @restaurant.address %>
