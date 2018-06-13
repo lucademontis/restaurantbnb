@@ -31,7 +31,7 @@ class BookingPolicy < ApplicationPolicy
   private
 
   def is_owner_or_admin?
-    @record.user == @user || @user.admin
+    @record.user == @user || @record.restaurant.user == @user
   end
 
 end
