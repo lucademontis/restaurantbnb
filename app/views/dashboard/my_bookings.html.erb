@@ -1,9 +1,33 @@
-<h1> All my bookings: </h1>
+
+
+<div class="container">
+  <h2>My bookings</h2>
+
 
 <% @bookings.each do |booking| %>
-<%= booking.start_date %>
-<%= booking.end_date %>
-<%= booking.number_of_people %>
-<%= booking.restaurant.name %>
-<%= booking.status %>
+ <div class="message">
+    <img class="avatar-small" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+    <div class="message-name">
+
+      <p> <%= booking.number_of_people %> people </p>
+    </div>
+    <div class="message-body">
+      <p><strong> <%=  booking.restaurant.name %></strong></p>
+      <p>
+       From  <%= booking.start_date %> to <%= booking.end_date %>
+      </p>
+    </div>
+    <div class="message-status">
+       <div class="form-group">
+        <%= booking.status %>
+      </div>
+      <p class="price"> <%= booking %></p>
+    </div>
+  </div>
 <% end %>
+
+</div>
+
+
+
+
