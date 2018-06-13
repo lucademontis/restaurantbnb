@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :restaurants do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :edit, :update]
   end
   get '/my-bookings', to: "dashboard#my_bookings"
   get '/my-restaurants', to: "dashboard#my_restaurants"

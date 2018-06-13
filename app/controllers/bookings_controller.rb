@@ -19,10 +19,30 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    authorize @booking
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    restaurant = Restaurant.find(params[:restaurant_id])
+    @booking.update(booking_params)
+    authorize @booking
+    if @booking.save
+      redirect_to booking_requests_path
+
+    else
+      render :edit
+    end
+  end
+
+
+
 private
 
   def booking_params
-    params.require(:booking).permit(:number_of_people, :start_date, :end_date, :restaurant_id, :user_id)
+    params.require(:booking).permit(:number_of_people, :start_date, :end_date, :restaurant_id, :user_id, :status)
   end
 
 end
