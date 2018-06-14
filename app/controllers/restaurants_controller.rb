@@ -28,15 +28,9 @@ class RestaurantsController < ApplicationController
     # calls for the same method within restaurant_policy
      authorize @restaurant
 
-     @restaurants = Restaurant.where.not(latitude: nil, longitude: nil)
 
-    @markers = @restaurants.map do |restaurant|
-      {
-        lat: restaurant.latitude,
-        lng: restaurant.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/restaurants/map_box", locals: { restaurant: restaurant }) }
-      }
-      end
+    @markers = [{lat: @restaurant.latitude, lng: @restaurant.longitude}]
+
 
   end
 
