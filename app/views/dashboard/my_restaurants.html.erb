@@ -1,41 +1,40 @@
 <div class="container">
 
 
-  <div class="banner-resto">
 
       <h1>My restaurants </h1>
+      <% @restaurants.each do |restaurant| %>
 
-      <table class="table table-bordered">
-        <tbody>
-          <thead>
-            <th>Name </th>
-            <th>Category</th>
-            <th>Address</th>
-            <th>Price</th>
-
-          </thead>
-          <% @restaurants.each do |restaurant| %>
-            <tr>
-              <td><%= restaurant.name %></td>
-
-              <td><%= restaurant.category %></td>
-              <td><%= restaurant.address %></td>
-              <td><%= restaurant.price %></td>
-              <td><%= link_to "Edit the restaurant", edit_restaurant_path(restaurant), class: "btn btn-primary btn-lg" %><td>
-            </tr>
-
-
-          <% end %>
-    </div>
-        </tbody>
-      </table>
-
-
-
-
-
+      <div class="card2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= restaurant.photo_url %>');">
+  <div class="card-category2"> <%= restaurant.category.capitalize %> </div>
+  <div class="card-description2">
+    <h2><%= restaurant.name.upcase %> <%= link_to '<i class="fas fa-pen-square"></i>'.html_safe, edit_restaurant_path(restaurant) %></h2>
+    <p><%= restaurant.address %> -  <%= restaurant.price %></p>
   </div>
 
 
-<%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-primary btn-lg" %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <% end %>
+
+
+
+
+
+
+
+<%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-blue" %>
 </div>
