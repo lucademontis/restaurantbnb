@@ -7,8 +7,6 @@ class RestaurantPolicy < ApplicationPolicy
     end
   end
 
-
-
   def create?
     !@user.nil?
   end

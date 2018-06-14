@@ -1,5 +1,8 @@
 <div class="container">
   <div class="row">
+    <div class="container">
+      <%= render :partial => 'pages/form' %>
+    </div>
     <div class="column">
       <div class="row">
         <% @restaurants.each do |restaurant| %>
@@ -11,7 +14,7 @@
               <%= link_to "", restaurant_path(restaurant), class: 'card-link' %>
             </div>
           </div>
-            <% end %>
+        <% end %>
       </div>
     </div>
   </div>
