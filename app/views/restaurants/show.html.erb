@@ -1,38 +1,68 @@
 <div class="map" style="background-image: url('<%= @restaurant.photo_url %>')"></div>
+  <div class="container margin-top-negative">
 
-<div class="container margin-top-negative">
-  <div class="row">
-    <div class="col-8">
-      <div class="restaurant-show-card">
-        <h1><%= @restaurant.name %></h1>
-        <p class="restaurant-show-address"><%= @restaurant.address %></p>
+    <% if @current_user == nil %>
+
+      <div class="row">
+        <div class="col-8">
+          <div class="restaurant-show-card">
+            <h1><%= @restaurant.name %></h1>
+            <p class="restaurant-show-address"><%= @restaurant.address %></p>
+            <p> <%= link_to "Book Now",  new_restaurant_booking_path(@restaurant), class: "btn btn-cute" %> </p>
+          </div>
+          <div class="restaurant-show-card">
+            <h3>Category:</h3>
+            <p> <%= @restaurant.category %> </p>
+          </div>
+          <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @restaurant.address %>&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:yellow%7C<%= @restaurant.address %>&key=#{GOOGLE_KEY}')">
+          </div>
+        </div>
       </div>
-      <div class="restaurant-show-card">
-
- <!--        <h3>A bit more about this restaurant...</h3>
- <p>%= @restaurant.description %></p> -->
-
-        <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @restaurant.address %>&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:yellow%7C<%= @restaurant.address %>&key=#{GOOGLE_KEY}')"></div>
-      </div>
-    </div>
-
-    <div class="col-4">
-      <div class="restaurant-show-card">
-
-         <% if @restaurant.user_id != @current_user.id %>
-              <p> <%= link_to "Book Now",  new_restaurant_booking_path(@restaurant), class: "btn btn-cute" %> </p>
-            <% end %>
-      </div>
-      <div class="restaurant-show-card">
-        <h3>Details</h3>
-        <div class="flex">
-
-          <div class="flex ml-3">
-            <i class="material-icons mr-2">Price: <%= @restaurant.price %> €</i>
+      <div class="col-4">
+        <div class="restaurant-show-card">
+          <h3>Details</h3>
+          <div class="flex">
+            <div class="flex ml-3">
+              <i class="material-icons mr-2">Price: <%= @restaurant.price %> €</i>
+            </div>
           </div>
         </div>
       </div>
 
-    </div>
+    <% else %>
+
+      <div class="row">
+        <div class="col-8">
+          <div class="restaurant-show-card">
+            <h1><%= @restaurant.name %></h1>
+            <p class="restaurant-show-address"><%= @restaurant.address %></p>
+            <% if @restaurant.user_id != @current_user.id %>
+              <p> <%= link_to "Book Now",  new_restaurant_booking_path(@restaurant), class: "btn btn-cute" %> </p>
+            <% end %>
+            <% if @restaurant.user_id == @current_user.id  %>
+              <%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_restaurant_path %>
+            <% end %>
+          </div>
+          <div class="restaurant-show-card">
+            <h3>Category:</h3>
+            <p> <%= @restaurant.category %> </p>
+          </div>
+          <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @restaurant.address %>&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:yellow%7C<%= @restaurant.address %>&key=#{GOOGLE_KEY}')"></div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="restaurant-show-card">
+          <h3>Details</h3>
+          <div class="flex">
+            <div class="flex ml-3">
+              <i class="material-icons mr-2">Price: <%= @restaurant.price %> €</i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+
   </div>
 </div>
+
