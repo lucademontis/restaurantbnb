@@ -40,7 +40,8 @@ class BookingsController < ApplicationController
     restaurant = Restaurant.find(params[:restaurant_id])
     authorize @booking
     @booking.destroy
-    redirect_to my_bookings_path
+    # if it cannont redirect back, it goes to root_path
+    redirect_back(fallback_location: root_path)
   end
 
 
