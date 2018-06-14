@@ -11,10 +11,15 @@
 
  <!--        <h3>A bit more about this restaurant...</h3>
  <p>%= @restaurant.description %></p> -->
+        <div class="map">
+          <div
+            id="map"
+            style="width: 100%;
+            height: 580px;"
+            data-markers="<%= @markers.to_json %>"
+          ></div>
+        </div>
 
-        <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @restaurant.address %>&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:yellow%7C<%= @restaurant.address %>&key=#{GOOGLE_KEY}')"></div>
-      </div>
-    </div>
 
     <div class="col-4">
       <div class="restaurant-show-card">
