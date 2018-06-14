@@ -10,12 +10,17 @@ class RestaurantsController < ApplicationController
 
   def index
     # policy_scope is a method that calls the scope resolve from REst_policy
-     @restaurants = policy_scope(Restaurant).order(created_at: :desc)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR category ILIKE :query"
+      @restaurants = policy_scope(Restaurant).where(sql_query, query: "%#{params[:query]}%").order(created_at: :desc)
+    else
+      @restaurants = policy_scope(Restaurant).order(created_at: :desc)
+    end
   end
 
   def show
     # calls for the same method within restaurant_policy
-     authorize @restaurant
+    authorize @restaurant
   end
 
   def create
