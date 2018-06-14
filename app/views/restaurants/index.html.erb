@@ -1,12 +1,16 @@
 
 <div class="container">
 
-<h2> We found <%= @restaurants.count %> restaurants for you <%= current_user.name %> </h2>
+<% if @current_user != nil %>
+  <h2> We found <%= @restaurants.count %> restaurants for you <%= current_user.name %> </h2>
+<% else %>
+  <h2> We found <%= @restaurants.count %> restaurants for you </h2>
+<% end %>
 
   <div class="row">
       <%= render :partial => 'pages/form' %>
     </div>
-  
+
     <div class="column">
       <% @restaurants.each do |restaurant| %>
 
@@ -25,7 +29,7 @@
 
     <% end %>
     </div>
-  
+
     <div class="column">
       <div class="row">
         <div class="row">
