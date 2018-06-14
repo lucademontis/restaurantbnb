@@ -7,7 +7,6 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
-
   def create?
     !@user.nil?
   end
