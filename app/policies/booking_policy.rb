@@ -24,9 +24,9 @@ class BookingPolicy < ApplicationPolicy
     is_owner_or_admin?
   end
 
-  # def destroy?
-  #   is_owner_or_admin?
-  # end
+  def destroy?
+    is_owner_or_admin?
+  end
 
   private
 
