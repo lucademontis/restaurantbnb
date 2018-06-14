@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new
     # calls for the same method within restaurant_policy
     authorize @restaurant
+
   end
 
   def index
@@ -46,6 +47,7 @@ class RestaurantsController < ApplicationController
     # calls for the same method within restaurant_policy
     authorize @restaurant
     if @restaurant.save
+      raise
       redirect_to restaurant_path(@restaurant)
     else
       render :new
