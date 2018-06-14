@@ -10,12 +10,34 @@ class RestaurantsController < ApplicationController
 
   def index
     # policy_scope is a method that calls the scope resolve from REst_policy
-     @restaurants = policy_scope(Restaurant).order(created_at: :desc)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR category ILIKE :query"
+      @restaurants = policy_scope(Restaurant).where(sql_query, query: "%#{params[:query]}%").order(created_at: :desc)
+      @restaurants = @restaurants.where.not(latitude: nil, longitude: nil)
+      @markers = @restaurants.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/restaurants/map_box", locals: { restaurant: restaurant }) }
+      }
+      end
+    else
+      @restaurants = policy_scope(Restaurant).order(created_at: :desc)
+      @restaurants = @restaurants.where.not(latitude: nil, longitude: nil)
+      @markers = @restaurants.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/restaurants/map_box", locals: { restaurant: restaurant }) }
+      }
+      end
+    end
   end
 
   def show
     # calls for the same method within restaurant_policy
-     authorize @restaurant
+    authorize @restaurant
+    @markers = [{lat: @restaurant.latitude, lng: @restaurant.longitude}]
   end
 
   def create

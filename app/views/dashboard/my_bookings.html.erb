@@ -23,6 +23,9 @@
       </div>
       <p class="price"> <%= booking.total_price %> € </p>
     </div>
+    <div>
+      <%= link_to "delete this booking", restaurant_booking_path(booking.restaurant, booking), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-warning'%>
+    </div>
   </div>
 <% end %>
 

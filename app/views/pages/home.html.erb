@@ -1,12 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%), url('<%= image_path 'laurent-perren-477138-unsplash (1).jpg' %>');">
-      <div class="banner-content">
-
-        <br>
-          <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
-          <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
-
-
-  <body>
+  <div class="banner-content">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
     <main>
       <div class="marker"></div>
         <h1 class="e">E</h1>
@@ -18,8 +13,10 @@
         <h1 class="r">r</h1>
         <h1 class="k">K</h1>
     </main>
-  </body>
-
-        <%= link_to "See all Restaurants", restaurants_path, class: "btn btn-blue" %>
-      </div>
+    <div class="container">
+      <%= render 'form' %>
+    </div>
+    <br>
+    <%= link_to "See all Restaurants", restaurants_path, class: "btn btn-blue" %>
+  </div>
 </div>

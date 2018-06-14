@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
 
+  before_action :find_booking, only: [:edit, :update, :destroy]
+
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @booking = Booking.new
@@ -13,7 +15,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.user = current_user
     if @booking.save
-      redirect_to restaurant_path(@restaurant)
+      redirect_to my_bookings_path
     else
       render :new
     end
@@ -21,20 +23,25 @@ class BookingsController < ApplicationController
 
   def edit
     authorize @booking
-    @booking = Booking.find(params[:id])
   end
 
   def update
-    @booking = Booking.find(params[:id])
     restaurant = Restaurant.find(params[:restaurant_id])
     @booking.update(booking_params)
     authorize @booking
     if @booking.save
       redirect_to booking_requests_path
-
     else
       render :edit
     end
+  end
+
+  def destroy
+    restaurant = Restaurant.find(params[:restaurant_id])
+    authorize @booking
+    @booking.destroy
+    # if it cannont redirect back, it goes to root_path
+    redirect_back(fallback_location: root_path)
   end
 
 
@@ -43,6 +50,10 @@ private
 
   def booking_params
     params.require(:booking).permit(:number_of_people, :start_date, :end_date, :restaurant_id, :user_id, :status)
+  end
+
+  def find_booking
+    @booking = Booking.find(params[:id])
   end
 
 end
