@@ -1,27 +1,31 @@
 <div class="container">
   <h2>My booking requests</h2>
+
   <% @reservations.each do |request| %>
-  <div class="message">
-    <img class="avatar-small" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-    <div class="message-name">
-      <h3> <%=  request.user.name %></h3>
-      <p> <%= request.number_of_people %> people </p>
-    </div>
-    <div class="message-body">
-      <p><strong> <%=  request.restaurant.name %></strong></p>
-      <p>
-       From  <%= request.start_date %> to <%= request.end_date %>
-      </p>
-    </div>
-    <div class="message-status">
-       <div class="form-group">
-        <%= render 'form', booking: request %>
+
+    <div class="message">
+      <img class="avatar-small" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+      <div class="message-name">
+        <h3> <%=  request.user.name %></h3>
+        <p> <%= request.number_of_people %> people </p>
       </div>
-      <p class="price"> <%= request.total_price %> € </p>
+      <div class="message-body">
+        <p><strong> <%=  request.restaurant.name %></strong></p>
+        <p>
+         From  <%= request.start_date %> to <%= request.end_date %>
+        </p>
+      </div>
+      <div class="message-status">
+        <div class="form-group">
+          <%= render 'form', booking: request %>
+        </div>
+        <p class="price"> <%= request.total_price %> € </p>
+      </div>
+      <div>
+        <%= link_to "delete this booking", restaurant_booking_path(request.restaurant, request), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-warning'%>
+      </div>
     </div>
-    <div>
-      <%= link_to "delete this booking", restaurant_booking_path(request.booking.restaurant, request.booking), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-warning'%>
-    </div>
-  </div>
+
   <% end %>
+
 </div>
