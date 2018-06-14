@@ -1,28 +1,24 @@
-
 .banner-resto{
   background-position: center;
   color: black;
   text-align: center;
-  height: 60vh;
+  height: 70vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: left;
-
 }
-
 
 .btn-cute{
   color: white;
   background: #2E6C7D;
   margin: 10px;
-  &:hover{
-    color:white;
-    background: #0E2C40;
+    &:hover{
+      color:white;
+      background: #0E2C40;
   }
 }
-
 
 .banner-inside{
   background:white;
@@ -32,10 +28,10 @@
 }
 
 .fa-edit{
-font-size: 30px;
-color: #2E6C7D;
-margin-left: 20px;
-&:hover{
-  color: #0E2C40;
-}
+  font-size: 30px;
+  color: #2E6C7D;
+  margin-left: 20px;
+    &:hover{
+      color: #0E2C40;
+  }
 }
