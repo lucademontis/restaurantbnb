@@ -13,8 +13,9 @@
     <%= f.input :category %>
     <%= f.input :address %>
     <%= f.input :price %> per day
-    <%= f.input :photo %>
+    <%= f.file_field :photo, multiple: true %>
     <%= f.input :photo_cache, as: :hidden %>
     <%= f.button :submit, class: 'btn btn-primary' %>
   <% end %>
 </div>
+
