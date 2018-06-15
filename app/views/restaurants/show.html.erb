@@ -11,6 +11,9 @@
             <div class="restaurant-show-title">
               <h1><%= @restaurant.name %></h1>
               <p class="restaurant-show-address"><%= @restaurant.address %></p>
+              <div class="restaurant-show-address">
+                <h4><%= @restaurant.description  %></h4>
+              </div>
                 <p> <%= link_to "Book Now",  new_restaurant_booking_path(@restaurant), class: "btn btn-cute" %> </p>
             </div>
           </div>
@@ -61,12 +64,16 @@
             <div class="restaurant-show-title">
               <h1><%= @restaurant.name %></h1>
               <p class="restaurant-show-address"><%= @restaurant.address %></p>
+              <div class="restaurant-show-address">
+                <h4><%= @restaurant.description  %></h4>
+              </div>
               <% if @restaurant.user_id != @current_user.id %>
                 <p> <%= link_to "Book Now",  new_restaurant_booking_path(@restaurant), class: "btn btn-cute" %> </p>
               <% end %>
               <% if @restaurant.user_id == @current_user.id  %>
                 <%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_restaurant_path %>
               <% end %>
+
             </div>
           </div>
 
