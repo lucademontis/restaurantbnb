@@ -13,6 +13,7 @@
      <%= link_to "My booking requests ", booking_requests_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My bookings", my_bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My restaurants", my_restaurants_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "All restaurants", restaurants_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -52,6 +53,12 @@
         <li> <%= link_to "My booking", my_bookings_path %> </li>
         <li> <%= link_to "My restaurant", my_restaurants_path %> </li>
         <li> <%= link_to "Add a new restaurant", new_restaurant_path %> </li>
+        <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+        </li>
+
       </ul>
     </div>
   </div>

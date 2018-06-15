@@ -67,7 +67,7 @@
 }
 
 .restaurant-show-title h1 {
-  font-family: 'Amaranth', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 70px;
   padding-left: 20px;
   margin-top: -11px;
@@ -87,6 +87,38 @@
   padding: 19px;
   font-style: italic;
 }
+
+.button-book{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 37px;
+}
+
+.button-book a{
+  width: 300px;
+  background-color: white;
+  box-shadow: 2px 2px 4px lightgray;
+  color: #2E6C7D;;
+  border-radius: 5px;
+
+  text-decoration: none
+
+}
+
+.button-book a:hover{
+  width: 300px;
+  background-color: #2E6C7D;
+  border-radius: 5px;
+  border-color: #2E6C7D;
+  text-decoration: none
+
+}
+
+.button-edit{
+  padding-bottom: 15px;
+}
+
 
 
 .map {
