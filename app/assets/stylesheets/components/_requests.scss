@@ -3,6 +3,9 @@
   align-items: center;
   padding: 20px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
+  background-color: white;
+  box-shadow: 3px 3px 8px lightgrey;
+  margin-bottom: 10px;
 }
 .message:last-child {
   border-bottom: none;
@@ -43,7 +46,20 @@
 .message-status {
   font-size: 14px;
   font-weight: bold;
+  padding: 0px 15px;
 }
+  .message-status--pending {
+    color: grey;
+  }
+
+  .message-status--accepted {
+    color: green;
+  }
+
+  .message-status--declined {
+    color: red;
+  }
+
 .status.accepted {
   color: #04A366;
 }
@@ -53,3 +69,4 @@
 .status.pending {
   color: lightgrey;
 }
+
