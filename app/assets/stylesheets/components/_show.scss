@@ -140,3 +140,24 @@
   color: #333;
 
 }
+
+.card-container {
+  width: 70%;
+}
+
+.row {
+  display: block;
+}
+
+.main-container {
+  display: flex;
+}
+
+.map-container {
+  width: 30%;
+  margin-left: 10px;
+}
+
+#map {
+  height: 100%;
+}

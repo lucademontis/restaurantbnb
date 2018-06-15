@@ -10,6 +10,7 @@
   border-radius: 3px;
   display: flex;
   margin-top: 20px;
+  margin-right: 4px;
 }
 .card-user {
   position: absolute;
@@ -39,6 +40,14 @@
   justify-content: center;
   text-align: center;
   align-items: center;
+}
+
+.card-edit-wrapper{
+  position: relative;
+  display: flex;
+  left: 94%;
+  top: 3%;
+  font-size: 30px;
 }
 
 .card-title-wrapper h2 {
@@ -78,6 +87,9 @@
   opacity: 0.1;
 }
 
+.fa-pen-square {
+  color: white;
+}
 
 
 .fa-euro-sign{
@@ -90,3 +102,5 @@ padding: 5px;
 font-size: 30px;
 padding: 5px;
 }
+
+
