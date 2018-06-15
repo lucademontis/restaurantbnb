@@ -1,14 +1,9 @@
-
-
 <div class="container">
-  <h2>My bookings</h2>
-
-
-<% @bookings.each do |booking| %>
- <div class="message">
-    <img class="avatar-small" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-    <div class="message-name">
-
+  <h2 class="text-center">My bookings</h2>
+  <% @bookings.each do |booking| %>
+    <div class="message">
+      <img class="avatar-small" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+      <div class="message-name">
       <p> <%= booking.number_of_people %> people </p>
     </div>
     <div class="message-body">
@@ -17,14 +12,12 @@
        From  <%= booking.start_date %> to <%= booking.end_date %>
       </p>
     </div>
-    <div class="message-status">
-       <div class="form-group">
+    <div class="message-status message-status--<%= booking.status %> text-center">
         <%= booking.status %>
-      </div>
-      <p class="price"> <%= booking.total_price %> € </p>
+        <p class="price"> <%= booking.total_price %> € </p>
     </div>
     <div>
-      <%= link_to "delete this booking", restaurant_booking_path(booking.restaurant, booking), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-warning'%>
+      <%= link_to ('<i class="fa fa-trash"></i>').html_safe, restaurant_booking_path(booking.restaurant, booking), method: :delete, data: { confirm: "Are you sure?" }%>
     </div>
   </div>
 <% end %>
