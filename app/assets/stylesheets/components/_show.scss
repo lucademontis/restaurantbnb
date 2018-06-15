@@ -48,8 +48,24 @@
   border-radius: 3px;
 }
 
+.restaurant-show-card h1 {
+  font-family: 'Amaranth', sans-serif;
+  font-size: 70px;
+  padding-left: 20px;
+  margin-top: -11px;
+  margin-bottom: -25px;
+}
+
+.restaurant-show-card p {
+  font-size: 20px;
+  color: #333;
+  padding: 20px;
+  font-style: italic;
+}
+
+
 .map {
-  height: 350px;
+  height: 330px;
   background-position: center;
   background-size: cover;
 }
@@ -65,4 +81,5 @@
   font-weight: 300;
   font-size: 20px;
   color: #333;
+
 }
