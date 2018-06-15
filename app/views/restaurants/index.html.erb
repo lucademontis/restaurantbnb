@@ -10,14 +10,16 @@
   <div class="row">
       <%= render :partial => 'pages/form' %>
   </div>
-
+  <br>
     <div class="column">
       <% @restaurants.each do |restaurant| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= restaurant.photo_url %>');">
+          <div class="card-title-wrapper">
+            <h2> <%= restaurant.name.upcase %></h2>
+          </div>
           <div class="card-category"> <%= restaurant.category.capitalize %></div>
             <div class="card-description">
-              <h2> <%= restaurant.name.upcase %></h2>
               <p> <i class="fas fa-euro-sign"></i> <%= restaurant.price %> /day /pers</p>
               <p><i class="fas fa-map-marker"></i> <%= restaurant.address %> </p>
             </div>
@@ -27,7 +29,7 @@
       </div>
       <% end %>
     </div>
-
+    <br>
     <div class="container">
       <div class="column">
         <div class="row">
@@ -45,6 +47,7 @@
         </div>
       </div>
     </div>
+
 
 
     <div class="banner banner-show-rest">

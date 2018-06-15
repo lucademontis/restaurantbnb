@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :restaurants do
     resources :bookings, only: [:new, :create, :edit, :update, :destroy]
+    resources :reviews, only: [:create, :new]
   end
   get '/my-bookings', to: "dashboard#my_bookings"
   get '/my-restaurants', to: "dashboard#my_restaurants"
