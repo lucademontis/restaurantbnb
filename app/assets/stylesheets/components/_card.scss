@@ -7,6 +7,7 @@
   position: relative;
   margin: 5px;
   border-radius: 3px;
+  margin-top: 20px;
 }
 .card-user {
   position: absolute;
@@ -32,17 +33,18 @@
   align-items: center;
   text-align: center;
   font-size: 21px;
+
 }
 .card-description p {
-  font-size: 12px;
+  font-size: 14px;
   opacity: 0.8;
   font-weight: lighter;
 }
 
 
 .card-description i {
-  font-size: 24px;
-  padding-right: 5px;
+  font-size: 20px;
+  padding: 5px;
   color:#FAFAFA;
 
 }
@@ -58,4 +60,17 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+
+
+.fa-euro-sign{
+font-size: 30px;
+padding: 5px;
+}
+
+
+.fa-map-marker{
+font-size: 30px;
+padding: 5px;
 }
