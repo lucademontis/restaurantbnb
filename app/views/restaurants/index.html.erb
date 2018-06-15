@@ -1,5 +1,5 @@
 <div class="container">
-  <% if @current_user != nil %>
+  <% if current_user != nil %>
     <h2 class="text-center"> We found <%= @restaurants.count %> restaurants for you, <%= current_user.name %>. </h2>
   <% else %>
     <h2 class="text-center"> We found <%= @restaurants.count %> restaurants for you. </h2>
