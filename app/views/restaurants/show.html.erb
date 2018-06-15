@@ -1,85 +1,113 @@
+ <link href="https://fonts.googleapis.com/css?family=Amaranth|Armata|Krona+One" rel="stylesheet">
 <div class="map" style="background-image: url('<%= @restaurant.photo_url %>')"></div>
   <div class="container margin-top-negative">
-    
+
     <% if @current_user == nil %>
-    
-      <div class="row">
-        <div class="col-8">
-          <div class="restaurant-show-card">
-            <h1><%= @restaurant.name %></h1>
-            <p class="restaurant-show-address"><%= @restaurant.address %></p>
-            <p> <%= link_to "Book Now",  new_restaurant_booking_path(@restaurant), class: "btn btn-cute" %> </p>
+
+
+      <div class="row" >
+
+         <div style="width: 60%; float:left">
+            <div class="restaurant-show-title">
+              <h1><%= @restaurant.name %></h1>
+              <p class="restaurant-show-address"><%= @restaurant.address %></p>
+                <p> <%= link_to "Book Now",  new_restaurant_booking_path(@restaurant), class: "btn btn-cute" %> </p>
+            </div>
           </div>
-          <div class="restaurant-show-card">
-            <h3>Category:</h3>
-            <p> <%= @restaurant.category %> </p>
+
+          <div style="width: 38%; float:right">
+
+              <div class="restaurant-show-card">
+                  <h3>Details</h3>
+                  <div class="flex">
+                    <div class="flex ml-3">
+                      <i class="material-icons mr-2">Price: <%= @restaurant.price %> €</i>
+                    </div>
+                  </div>
+                </div>
+
           </div>
-          
+
+            <div style="width: 38%; float:right">
+
+             <div class="restaurant-show-category">
+                <h3>Category</h3>
+                <i> <%= @restaurant.category %> </i>
+             </div>
+
+            </div>
+
+    <!-- Row -->
+    </div>
+
           <div class="map">
             <div
               id="map"
               style="width: 100%;
-              height: 580px;"
+              height: 380px;"
               data-markers="<%= @markers.to_json %>"
             ></div>
           </div>
-            
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="restaurant-show-card">
-          <h3>Details</h3>
-          <div class="flex">
-            <div class="flex ml-3">
-              <i class="material-icons mr-2">Price: <%= @restaurant.price %> €</i>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
 
     <% else %>
 
-      <div class="row">
-        <div class="col-8">
-          <div class="restaurant-show-card">
-            <h1><%= @restaurant.name %></h1>
-            <p class="restaurant-show-address"><%= @restaurant.address %></p>
-            <% if @restaurant.user_id != @current_user.id %>
-              <p> <%= link_to "Book Now",  new_restaurant_booking_path(@restaurant), class: "btn btn-cute" %> </p>
-            <% end %>
-            <% if @restaurant.user_id == @current_user.id  %>
-              <%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_restaurant_path %>
-            <% end %>
+
+
+      <div class="row" >
+
+         <div style="width: 60%; float:left">
+            <div class="restaurant-show-title">
+              <h1><%= @restaurant.name %></h1>
+              <p class="restaurant-show-address"><%= @restaurant.address %></p>
+              <% if @restaurant.user_id != @current_user.id %>
+                <p> <%= link_to "Book Now",  new_restaurant_booking_path(@restaurant), class: "btn btn-cute" %> </p>
+              <% end %>
+              <% if @restaurant.user_id == @current_user.id  %>
+                <%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_restaurant_path %>
+              <% end %>
+            </div>
           </div>
-          <div class="restaurant-show-card">
-            <h3>Category:</h3>
-            <p> <%= @restaurant.category %> </p>
+
+          <div style="width: 38%; float:right">
+
+              <div class="restaurant-show-card">
+                  <h3>Details</h3>
+                  <div class="flex">
+                    <div class="flex ml-3">
+                      <i class="material-icons mr-2">Price: <%= @restaurant.price %> €</i>
+                    </div>
+                  </div>
+                </div>
+
           </div>
-          
+
+            <div style="width: 38%; float:right">
+
+             <div class="restaurant-show-category">
+                <h3>Category</h3>
+                <i> <%= @restaurant.category %> </i>
+             </div>
+
+            </div>
+
+    <!-- Row -->
+    </div>
+
           <div class="map">
             <div
               id="map"
               style="width: 100%;
-              height: 580px;"
+              height: 380px;"
               data-markers="<%= @markers.to_json %>"
             ></div>
           </div>
 
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="restaurant-show-card">
-          <h3>Details</h3>
-          <div class="flex">
-            <div class="flex ml-3">
-              <i class="material-icons mr-2">Price: <%= @restaurant.price %> €</i>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
 
     <% end %>
-
   </div>
 </div>
 

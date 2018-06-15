@@ -14,6 +14,7 @@
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+
 }
 
 .restaurant-card-image {
@@ -48,8 +49,41 @@
   border-radius: 3px;
 }
 
+.restaurant-show-category {
+  background: #F8F9FA;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  border-radius: 3px;
+}
+
+
+.restaurant-show-title {
+  background: #F8F9FA;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  border-radius: 3px;
+}
+
+.restaurant-show-title h1 {
+  font-family: 'Amaranth', sans-serif;
+  font-size: 70px;
+  padding-left: 20px;
+  margin-top: -11px;
+  margin-bottom: -25px;
+}
+
+.restaurant-show-title p {
+  font-size: 20px;
+  color: #333;
+  padding: 20px;
+  font-style: italic;
+}
+
+
 .map {
-  height: 350px;
+  height: 330px;
   background-position: center;
   background-size: cover;
 }
@@ -65,4 +99,5 @@
   font-weight: 300;
   font-size: 20px;
   color: #333;
+
 }
