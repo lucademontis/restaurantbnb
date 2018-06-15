@@ -1,30 +1,22 @@
 <div class="container">
+  <h1>My restaurants </h1>
+  <% @restaurants.each do |restaurant| %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= restaurant.photo_url %>');">
+      <div class="card-title-wrapper">
+        <h2> <%= restaurant.name.upcase %> </h2>
+      </div>
 
+      <div class="card-edit-wrapper">
+        <%= link_to '<i class="fas fa-pen-square"></i>'.html_safe, edit_restaurant_path(restaurant) %>
+      </div>
 
-      <h1>My restaurants </h1>
-      <% @restaurants.each do |restaurant| %>
-
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= restaurant.photo_url %>');">
-    <div class="card-category"> <%= restaurant.category.capitalize %> </div>
-    <div class="card-description">
-      <h2><%= restaurant.name.upcase %> <%= link_to '<i class="fas fa-pen-square"></i>'.html_safe, edit_restaurant_path(restaurant) %></h2>
-      <p> <i class="fas fa-euro-sign"></i> <%= restaurant.price %> /day /pers </p>
-
-      <p>  <i class="fas fa-map-marker"></i> <%= restaurant.address %>  € </p>
+      <div class="card-category"> <%= restaurant.category.capitalize %>
+      </div>
+      <div class="card-description">
+        <p> <i class="fas fa-euro-sign"></i> <%= restaurant.price %> /day /pers </p>
+        <p>  <i class="fas fa-map-marker"></i> <%= restaurant.address %>  € </p>
+      </div>
     </div>
-
-
-</div>
-
-
-
-          <% end %>
-
-
-
-
-
-
- <p class="text-center"> <%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-blue" %> </p>
-
+  <% end %>
+  <p class="text-center"> <%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-blue" %> </p>
 </div>
