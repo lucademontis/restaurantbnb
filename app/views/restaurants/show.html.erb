@@ -71,7 +71,7 @@
                 <p> <%= link_to "Book Now",  new_restaurant_booking_path(@restaurant), class: "btn btn-cute" %> </p>
               <% end %>
               <% if @restaurant.user_id == @current_user.id  %>
-                <%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_restaurant_path %>
+               <p>Edit your restaurant <%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_restaurant_path %></p>
               <% end %>
 
             </div>
