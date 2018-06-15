@@ -28,10 +28,13 @@
   left: 10px;
 }
 .card-description h2 {
-  font-size: 24px;
+    display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 21px;
 }
 .card-description p {
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0.8;
   font-weight: lighter;
 }
