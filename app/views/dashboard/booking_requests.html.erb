@@ -1,8 +1,6 @@
 <div class="container">
-  <h2>My booking requests</h2>
-
+  <h2 class="text-center">My booking requests</h2>
   <% @reservations.each do |request| %>
-
     <div class="message">
       <img class="avatar-small" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
       <div class="message-name">
@@ -15,17 +13,17 @@
          From  <%= request.start_date %> to <%= request.end_date %>
         </p>
       </div>
-      <div class="message-status">
+        <p class="price"> <%= request.total_price %> € </p>
+      <div class="message-status text-center">
         <div class="form-group">
           <%= render 'form', booking: request %>
         </div>
-        <p class="price"> <%= request.total_price %> € </p>
       </div>
       <div>
-        <%= link_to "delete this booking", restaurant_booking_path(request.restaurant, request), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-warning'%>
+        <%= link_to ('<i class="fa fa-trash"></i>').html_safe, restaurant_booking_path(request.restaurant, request), method: :delete, data: { confirm: "Are you sure?" }%>
       </div>
     </div>
-
   <% end %>
-
 </div>
+
+<!-- #f5f5f5 -->
