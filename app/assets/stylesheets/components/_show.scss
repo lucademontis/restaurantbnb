@@ -130,6 +130,7 @@
 .margin-top-negative {
   margin-top: -75px;
 }
+
 .no-mb {
   margin-bottom: 0;
 }
@@ -138,7 +139,6 @@
   font-weight: 300;
   font-size: 20px;
   color: #333;
-
 }
 
 .card-container {
@@ -156,8 +156,10 @@
 .map-container {
   width: 30%;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 #map {
   height: 100%;
+  position: sticky !important;
 }
