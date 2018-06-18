@@ -157,9 +157,11 @@
   width: 30%;
   margin-left: 10px;
   margin-right: 10px;
+   position: sticky;
 }
 
 #map {
   height: 100%;
-  position: sticky !important;
+  position: sticky;
+  margin-top: 10px;
 }
